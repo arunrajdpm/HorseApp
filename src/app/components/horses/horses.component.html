@@ -1,0 +1,45 @@
+<div>
+  <section class="horses_content">
+    <button (click)='createForm = !createForm'>Create</button>
+    <table class='horse_tableWrapper'>
+      <tr>
+        <th *ngFor="let header of horsesHeader"> {{ header | clearSymbols}}</th>
+      </tr>
+      <tr>
+      <tr *ngFor="let horse of horses">
+        <td *ngFor="let header of horsesHeader">
+          <span *ngIf="header != 'action'">{{ horse[header] }}</span>
+          <span *ngIf="header == 'action'"> <button class="inside_table" (click)='getHorse(horse)'>Full
+              Details</button></span>
+        </td>
+      </tr>
+
+    </table>
+    <div *ngIf='!createForm'>
+      <button *ngIf='horseKeys && horseKeys.length > 0' (click)='deleteHorse(horse)'>Delete</button>
+      <button *ngIf='horseKeys && horseKeys.length > 0' (click)='setHorse(horse)'>Edit</button>
+      <div *ngFor='let value of horseKeys' class="horses_profile"> <span
+          class="profile_key">{{ value | clearSymbols }}</span> <span class="profile_value">: {{ horse[value]}}</span>
+      </div>
+    </div>
+
+    <div *ngIf='createForm' class="horses_form">
+      <div>
+        <form (ngSubmit)="onSubmit()">
+          <input [(ngModel)]='horse.horse_name' class="customInput" name='name' max='255'>
+          <input [(ngModel)]='horse.horse_number' class="customInput" type='number' name='number' max='100'>
+          <input [(ngModel)]='horse.age_verified' value='true' type="radio" name='age'> age verified
+          <input [(ngModel)]='horse.age_verified' value='false' type="radio" name='age'> age not verified
+          <input [(ngModel)]='horse.dob' class="customInput" (change)='changeFormat(horse.dob)' type="date" name='dob'>
+          <select [(ngModel)]='horse.color' class="customInput" name='color'>
+            <option>red</option>
+            <option>green</option>
+            <option>yellow</option>
+          </select>
+          <input type='checkbox' [(ngModel)]='horse.ushja_registered' name='ushja'> ushja_registered
+          <button type="submit" [disabled]='!horse.horse_name'>submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

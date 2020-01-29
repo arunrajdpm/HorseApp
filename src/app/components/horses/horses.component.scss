@@ -1,0 +1,56 @@
+.horses_content {
+  padding: 10px 25px;
+  height: 100vh;
+  button {
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 12px 18px;
+    margin: 4px;
+    justify-content: center;
+    text-transform: uppercase;
+    border-width: 0px;
+    background-color: #5cbbf6;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) ;
+    color: #FFFFFF;
+  }
+  .horse_tableWrapper {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) ;
+    margin: 12px 0px;
+    border-spacing: 0px;
+    th {
+      border-bottom: 2px solid  rgba(0, 0, 0, 0.12);
+        padding:  12px 16px;
+        text-transform: uppercase;
+      }
+      tr {
+        &:hover {
+          background: #eeeeee;
+        }
+        td {
+            border-bottom: 2px solid  rgba(0, 0, 0, 0.12);
+            padding:  12px 14px;
+            .inside_table {
+              padding: 4px;
+              font-size: 12px;
+            }
+        }
+      }
+  }
+  .horses_profile {
+    display: grid;
+    padding: 10px 2px;
+    grid-template-columns: 1fr 4fr;
+    .profile_key {
+      text-transform: uppercase;
+    }
+  }
+  .horses_form {
+     .customInput {
+      display: block;
+      width: 50%;
+      margin: 12px 0px;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+  }
+}

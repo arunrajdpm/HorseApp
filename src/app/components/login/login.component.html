@@ -1,0 +1,10 @@
+<div class="login-wrapper">
+  <div class="login_fields">
+    <input [(ngModel)]="name" name='name'>
+    <input [(ngModel)]="password" name='password'>
+    <div class="button_wrapper">
+      <button (click)='clear()'>cancel</button>
+      <button (click)='onSubmit()'>submit</button>
+    </div>
+  </div>
+</div>
